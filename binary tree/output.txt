@@ -1,0 +1,22 @@
+4f 4 val 1 VI a  0i 
+4f 40 val 10 LX a  1i 
+9f 900 val 100 MC a  2i 
+1f 1000 val 1000 M a  3i 
+MCMXLIV
+0f 1 val 1  0i 
+0f 10 val 10  1i 
+0f 100 val 100  2i 
+1f 1000 val 1000 M a  3i 
+M
+8f s 3 1 val 1 I a I a I a 5 val 1 V a  0i 
+6f s 1 10 val 10 X a 50 val 10 L a  1i 
+7f s 2 100 val 100 C a C a 500 val 100 D a  2i 
+DCCLXVIII
+4f 4 val 1 VI a  0i 
+9f 90 val 10 CX a  1i 
+9f 900 val 100 MC a  2i 
+CMXCIV
+6f s 1 1 val 1 I a 5 val 1 V a  0i 
+2f 10 val 10 X a X a  1i 
+2f 100 val 100 C a C a  2i 
+CCXXVI
