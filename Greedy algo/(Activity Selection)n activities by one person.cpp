@@ -16,7 +16,7 @@ class Solution {
          else if (m1.pos < m2.pos) return true;// sort according to the position or priority
          return false;
       }
-   void maxMeetings(int s[], int e[], int n) {
+   void maxactivitys(int s[], int e[], int n) {
       struct meeting meet[n];
       for (int i = 0; i < n; i++) {
          meet[i].start = s[i], meet[i].end = e[i], meet[i].pos = i + 1;
@@ -30,9 +30,10 @@ class Solution {
       answer.push_back(meet[0].pos);
 
       for (int i = 1; i < n; i++) {
-         //check id starting time of new meeting s greater than ending tim of previous if yes then go ahead
-         ////we can can start activity at same time as ending tme of previous meeting since there might be collision between two party
-         if (meet[i].start > limit) 
+          //check id starting time of new activity
+          // s greater than or equal to ending tim of previous if yes then go ahead
+         //we can start activity at same time as ending tme since there is only one party
+         if (meet[i].start >= limit) //check on question basis on gfg > is right but on CN >= is used
          {
             limit = meet[i].end;//update the limit
             answer.push_back(meet[i].pos);
@@ -42,8 +43,7 @@ class Solution {
       for (int i = 0; i < answer.size(); i++) {
          cout << answer[i] << " ";
       }
-          cout<<"no of meeting :- "<<answer.size();
-
+      cout<<"no of activity :- "<<answer.size();
    }
 
 };
@@ -56,6 +56,6 @@ int main() {
    int n = 6;
    int start[] = {1,3,0,5,8,5};
    int end[] = {2,4,5,7,9,9};
-   obj.maxMeetings(start, end, n);
+   obj.maxactivitys(start, end, n);
    return 0;
 }

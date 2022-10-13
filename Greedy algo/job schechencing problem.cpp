@@ -15,23 +15,25 @@ class Solution {
    //Function to find the maximum profit and the number of jobs done
    pair < int, int > JobScheduling(Job arr[], int n) {
 
-      sort(arr, arr + n, comparison);
+      sort(arr, arr + n, comparison);// sorting on profit basis in decending order
       int maxi = arr[0].deadline;
       //max deadline
       for (int i = 1; i < n; i++) {
          maxi = max(maxi, arr[i].deadline);
       }
 
-      int slot[maxi + 1];
+      vector<int> slot(maxi + 1,-1);//no job done
 
-      for (int i = 0; i <= maxi; i++)
-         slot[i] = -1;
+  
 
       int countJobs = 0, jobProfit = 0;
 
-      for (int i = 0; i < n; i++) {
-         for (int j = arr[i].deadline; j > 0; j--) {
-            if (slot[j] == -1) {
+      for (int i = 0; i < n; i++)// already sorted so , i willl come on profit basis
+       {
+         for (int j = arr[i].deadline; j > 0; j--)
+          {
+            if (slot[j] == -1)// is job not done j day then do job 
+            {
                slot[j] = i;
                countJobs++;
                jobProfit += arr[i].profit;
@@ -41,6 +43,10 @@ class Solution {
       }
 
       return make_pair(countJobs, jobProfit);
+      // vector<int> ans;
+      // ans.push_back(countJobs);
+      // ans.push_back(jobProfit);
+      // return ans;
    }
 };
 int main() {

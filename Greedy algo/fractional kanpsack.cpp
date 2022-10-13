@@ -18,18 +18,19 @@ class Solution {
    // function to return fractionalweights
    double fractionalKnapsack(int W, Item arr[], int n) {
 
-      sort(arr, arr + n, comp);
+       sort(arr, arr + n, comp);//sorted on value/weight basis
 
       int curWeight = 0;
       double finalvalue = 0.0;
 
       for (int i = 0; i < n; i++) {
             
-         if (curWeight + arr[i].weight <= W) {
+         if (curWeight + arr[i].weight <= W)//  if full weight taken
+         {
             curWeight += arr[i].weight;//add full weight
             finalvalue += arr[i].value;//add full value
          } 
-         // if full weight can't file fraction
+         // if full weight can't take then  take fractional
          else
           {
             int remain = W - curWeight;
@@ -38,7 +39,7 @@ class Solution {
          }
       }
 
-      return finalvalue;
+      return finalvalu
 
    }
 };
