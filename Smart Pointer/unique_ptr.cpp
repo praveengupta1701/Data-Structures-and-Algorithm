@@ -40,8 +40,11 @@ int main() {
     return 0;
 }*/
 
-#include<iostream>
-#include<memory>
+#include <iostream>
+#include <memory>
+#include <iomanip>
+#include <thread>
+#include <mutex>
 using namespace std;
 
 class Foo {
@@ -73,7 +76,7 @@ int main() {
     Foo* p5=p4.release();
 
     p3.reset(p5);
-     cout<<p3->getX();
+    cout<<p3->getX();
 
     return 0;
 }

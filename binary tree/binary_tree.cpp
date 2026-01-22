@@ -119,14 +119,14 @@ int main()
 
 	root->left =new Node(2);
 	root->right =new Node(3);
-	root->left->right =new Node(10);
+	//root->left->right =new Node(10);
 
- 	root->left->left =new Node(-20);
+ 	//root->left->left =new Node(-20);
  // 	root->left->left->left =new Node(8);
  // 	root->left->left->left->left=new Node(9);
 	// root->right->left =new Node(6);
-	// root->right->right =new Node(-20);
-	// root->right->right->right =new Node(12);
+	// root->right->right =new Node(4);
+	// root->right->right->right =new Node(5);
  //    root->right->right->right->right =new Node(11);
 	
 	struct Node* soot =new Node(1);
@@ -134,18 +134,18 @@ int main()
 	soot->right =new Node(3);
 	soot->left->right =new Node(10);
 
-	// preorder(root);
-	// cout<<"\n";
+	 preorder(root);
+	 cout<<"\n";
 	// inorder(root);
 	// cout<<"\n";
 	// postorder(root);
 	// cout<<"\n";
 	//levelorder(root);
-
+	 cout<<height_balanced(root)<<"\n";
 //	alldfs_travelsal(root);
-	// cout<<maxdepth(root);
-	// isBalanced(root)?cout<<"BalancedBT \n":cout<<"Not BalancedBT \n";
-	//cout<<"\ndiameter \t"<<diameterBT(root)<<"\n";
+	 cout<<maxdepth(root);
+	 isBalanced(root)?cout<<"BalancedBT \n":cout<<"Not BalancedBT \n";
+	cout<<"\ndiameter \t"<<diameterBT(root)<<"\n";
 	//cout<<"max_sum = "<<max_path_sum(root)<<"\n";
 	// cout<<"count nodes "<<countnodes(root)<<" countleafs "<<countleafs(root);
 	// isIdentical(root,soot)?cout<<"identical":cout<<"not_same"<<endl;

@@ -24,7 +24,7 @@ int main()
     string intermediate;
      
     // Tokenizing w.r.t. space ' '
-    size_t found,l;
+    buffer_sizet found,l;
     while(getline(check1, intermediate, ' '))
     {
         tokens.push_back(intermediate);

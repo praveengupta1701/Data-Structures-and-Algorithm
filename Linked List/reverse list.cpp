@@ -42,6 +42,23 @@ public:
         head = prev_p; //step 3
         return head;
     }
+         ListNode* addFirstDeleteLast(ListNode* k, int data)
+ {
+    ListNode *add;
+    add=new ListNode(data);
+    add->next=k;// inserted in begin();
+    k=add;//
+    while(k->next->next!=NULL)
+    {
+        k=k->next;
+    }
+    ListNode *temp;
+    temp=k->next;
+    k->next=NULL;// for deleting last element
+    free(temp); // for freeing the memory
+   
+    return k;
+ }
 
 
     void display(ListNode* root)
@@ -61,10 +78,10 @@ public:
 
 int32_t main()
 {   
-    #ifndef ONLINE_JUDGE    
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-    #endif
+    // #ifndef ONLINE_JUDGE    
+    // freopen("input.txt", "r", stdin);
+    // freopen("output.txt", "w", stdout);
+    // #endif
 
     ListNode *root=new ListNode(5);
     root->next=new ListNode(7);
@@ -75,8 +92,8 @@ int32_t main()
     ListNode *ans;
     ans=s.reverseList(root);
     s.display(ans);
-
-
+    ans=s.addFirstDeleteLast(root,10);
+    ans.display();
 
 
     return 0;

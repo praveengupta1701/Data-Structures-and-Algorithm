@@ -57,6 +57,7 @@ int main()
 	root->left->right =new Node(10);
 
  	root->left->left =new Node(-20);
+    levelorder(root);
  // 	root->left->left->left =new Node(8);
  // 	root->left->left->left->left=new Node(9);
 	// root->right->left =new Node(6);

@@ -20,7 +20,7 @@
 #include <thread>
 #include <mutex>
 using namespace std;
-/*
+
  class Foo {
     int x;
     public :
@@ -49,11 +49,11 @@ int main(){
 
     auto shared_ptr=std::make_shared<int>(100);// for creating object
     return 0;
-} */
+} 
 
 
 //Threading
- class Foo {
+/* class Foo {
     int x;
     public :
     Foo(int x):x{x} {}
@@ -77,7 +77,7 @@ int main(){
 
     t1.join(); t2.join(); t3.join();
     return 0;
-} 
+} */
 /*
 class Test
 {

@@ -1,0 +1,24 @@
+pattern
+
+analogy
+
+usecases for pattern 
+
+problem for which  pattern came
+
+when to use
+
+consequences
+
+solution
+
+implementation
+explain  implementation in detail
+
+uml diagram
+
+real world example
+
+other examples
+
+pros and cons
