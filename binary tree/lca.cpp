@@ -26,7 +26,7 @@ void traversePreOrder(TreeNode *temp) {
 }
 
 //method 1:
-bool getpath(TreeNode *root,vector<int> &v,int data)
+bool getpath(TreeNode *root,vector<int> &v,int data) //finding node is present or not
 {
   if(root==NULL)
     return false;
@@ -46,12 +46,19 @@ bool getpath(TreeNode *root,vector<int> &v,int data)
 
 
 
-std::vector<int>  getpathnode(TreeNode *root, int data)
+std::vector<int>  getpathnode(TreeNode *root, int data)  // path to node
 {
   std::vector<int> v;
   if(root == NULL)
     return v;
-  getpath(root,v,data);
+  if(getpath(root,v,data))
+  {
+    cout<<"\npresent node\n";
+  }
+  else
+  {
+    cout<<"\n not present\n";
+  }
   return v;
 }
 
@@ -100,10 +107,10 @@ TreeNode* lca_fast(TreeNode *root, TreeNode *p,TreeNode  *q)
 }
 int main()
 {
-    #ifndef ONLINE_JUDGE    
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-  #endif
+  //   #ifndef ONLINE_JUDGE    
+  //   freopen("input.txt", "r", stdin);
+  //   freopen("output.txt", "w", stdout);
+  // #endif
  TreeNode* root= new TreeNode(4);
  root->left=new TreeNode(6);
  root->right=new TreeNode(5);
@@ -117,14 +124,15 @@ int main()
  root->right->right =new  TreeNode(8);
 // traversePreOrder(root);
   
-  // std::vector<int> res=getpathnode(root,13);
-  // for_each(res.begin(),res.end(),[](int x){cout<<x<<" ";});
+   std::vector<int> res=getpathnode(root,13);
+  for_each(res.begin(),res.end(),[](int x){cout<<x<<" ";});
+  cout<<"\n";
   // int k=lca(root,13,9);
   // cout<<k<<" ";
  TreeNode *p,*q;
  q=root->left->left;
  p=root->right->right;
- cout<<p->val<<" "<<q->val<<" ";
- cout<<lca_fast(root,p,q)->val;
+ //cout<<"p "<<p->val<<" q "<<q->val<<" ";
+// cout<<lca_fast(root,p,q)->val;
  
 }
