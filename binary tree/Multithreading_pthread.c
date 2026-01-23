@@ -18,7 +18,7 @@ int main()
 	pthread_t thread_id;
 	printf("Before Thread\n");
 	pthread_create(&thread_id, NULL, myThreadFun, (void *)&thread_id);
-	// pthread_join(thread_id, NULL);
+	 pthread_join(thread_id, NULL);
 	pthread_exit(NULL);
 	printf("After Thread\n");
 	exit(0);

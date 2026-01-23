@@ -86,7 +86,7 @@ void printVerticalOrder_levelorder(TreeNode* root)
  
         // insert this node's data in vector of hash
         m[hd].push_back(node->data);
- 
+         cout<<"m["<<hd<<"] ="<<node->data<<"\n";
         if (node->left != NULL)
             que.push(make_pair(node->left, hd - 1));
         if (node->right != NULL)
@@ -121,7 +121,7 @@ vector<vector<int>> printVerticalOrder(TreeNode* root)
  		int x=temp.second.first;
  		int y=temp.second.second;
         m[x][y].insert(node->data);
- 
+        cout<<"m["<<x<<"]["<<y<<"] ="<<node->data<<"\n";
         if (node->left != NULL)
             que.push({node->left,{ x - 1,y+1}});
         if (node->right != NULL)
@@ -146,22 +146,23 @@ int main()
 
 	root->left =new Node(2);
 	root->right =new Node(3);
-	root->left->right =new Node(10);
+	root->left->right =new Node(5);
 
  	root->left->left =new Node(4);
- 	root->left->left->left =new Node(8);
- 	root->left->left->left->left=new Node(9);
+ //	root->left->left->left =new Node(8);
+ 	//root->left->left->left->left=new Node(9);
 	root->right->left =new Node(6);
 	root->right->right =new Node(7);
-	root->right->right->right =new Node(12);
-    root->right->right->right->right =new Node(11);
-    vector<vector<int>> ans=printVerticalOrder(root);
-    for(auto x:ans)
-    {
-    	for (auto p:x)
-    	{
-    		cout<<p<<"\t";
-    	}
-    	cout<<endl;
-    }
+	//root->right->right->right =new Node(12);
+  //  root->right->right->right->right =new Node(11);
+    printVerticalOrder_levelorder(root);
+    // vector<vector<int>> ans=printVerticalOrder(root);
+    // for(auto x:ans)
+    // {
+    // 	for (auto p:x)
+    // 	{
+    // 		cout<<p<<"\t";
+    // 	}
+    // 	cout<<endl;
+    // }
 }

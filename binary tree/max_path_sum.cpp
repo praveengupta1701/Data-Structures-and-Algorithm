@@ -28,7 +28,7 @@ int max_path(TreeNode *root,int &ans)
 int max_path_sum(TreeNode *root)
 {
   int ans=INT_MIN;
-  max_path(root,ans);
+ cout<<"max_path "<< max_path(root,ans)<<"\n";
   return ans;
 }
 int main()
@@ -39,13 +39,13 @@ int main()
   root->right =new Node(3);
   root->left->right =new Node(10);
 
-  root->left->left =new Node(-20);
- //   root->left->left->left =new Node(8);
- //   root->left->left->left->left=new Node(9);
-  // root->right->left =new Node(6);
-  // root->right->right =new Node(-20);
-  // root->right->right->right =new Node(12);
- //    root->right->right->right->right =new Node(11);
-  //cout<<"max_sum = "<<max_path_sum(root)<<"\n";
+  root->left->left =new Node(20);
+   root->left->left->left =new Node(8);
+   root->left->left->left->left=new Node(9);
+  root->right->left =new Node(6);
+  root->right->right =new Node(20);
+  root->right->right->right =new Node(12);
+    root->right->right->right->right =new Node(11);
+  cout<<"max_sum = "<<max_path_sum(root)<<"\n";
   
 }

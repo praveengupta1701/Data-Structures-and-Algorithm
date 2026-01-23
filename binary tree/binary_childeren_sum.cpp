@@ -7,6 +7,29 @@ struct node {
   struct node * left, * right;
 };
 
+void inorder(struct node* root)
+{
+  if(root==NULL)
+  {
+    return ;
+  }
+  inorder(root->left);
+  cout<<root->data<<"\t";
+  inorder(root->right);
+}
+
+bool isChildSum(struct node * root) {
+    if (!root || (!root->left && !root->right))
+        return true;
+
+int left = root->left ? root->left->data : 0;
+    int right = root->right ? root->right->data : 0;
+
+return (root->data == left + right) &&
+           isChildSum(root->left) &&
+           isChildSum(root->right);
+}
+
 void reorder(node * root) {
   if (root == NULL) return;
   int child = 0;
@@ -52,8 +75,14 @@ int main() {
   root -> right = newNode(10);
   root -> right -> left = newNode(5);
   root -> right -> right = newNode(2);
+  inorder(root);
+cout<<"\ntransforming \n";
+  changeTree(root);  // changing tree to children form
+  inorder(root);
 
-  changeTree(root);
-
+  if(isChildSum(root))
+  {
+    cout<<"\nchildsumtree";
+  }
   return 0;
 }
